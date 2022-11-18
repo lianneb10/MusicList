@@ -37,6 +37,7 @@ This website is meant to be a tool for music listeners that wish to track their 
 * As a concert goer, I want to keep track of all the artists I am able to see live so that I can have a record of the concerts I went to over the past year.
 
 <h2 id="wireframes">📸 Wireframes </h2>
+![Slice 1](https://user-images.githubusercontent.com/114965043/202782295-a34e4c76-37e2-459b-a001-ba48f4811f7b.png)
 
 
 
