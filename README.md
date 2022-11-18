@@ -1,0 +1,45 @@
+# Music List
+A music listing website for avid music listeners to utilize.
+1. [General Information](#general-info)
+3. [Embedded Screenshot](#screenshot)
+4. [Technologies List](#technologies)
+5. [Installation](#installation)
+6. [User Stories](#user-stories)
+7. [Wireframes](#wireframes)
+8. [Hurdles](#hurdles)
+
+<h2 id="general-info"> ✨ General Info </h2>
+
+This website is meant to be a tool for music listeners that wish to track their favorite artists/concerts.
+
+<h2 id="screenshot">  🖼️ Embedded Screenshot </h2>
+
+
+
+<h2 id="technologies"> 💻 Technologies List </h2>
+
+* HTML
+* CSS
+* ejs
+* Javascript
+* Express
+* Mongo
+
+<h2 id="installation">🔧 Installation </h2>
+
+1. On the homepage of this repository, click "Code" and then download the code.
+2. Once you have downloaded the file, you are then able to open the code with VSCode
+3. In order to preview the site, use LivePreview (a VSCode extension)
+
+<h2 id="user-stories">💬 User Stories </h2>
+
+* As an avid music listener, I want to keep a record of any new artists I enjoy so that I can look back at all of the different artists I discovered over time.
+* As a concert goer, I want to keep track of all the artists I am able to see live so that I can have a record of the concerts I went to over the past year.
+
+<h2 id="wireframes">📸 Wireframes </h2>
+
+
+
+<h2 id="hurdles">:construction_worker: Hurdles </h2>
+
+
