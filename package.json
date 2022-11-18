@@ -1,0 +1,25 @@
+{
+  "name": "musiclist",
+  "version": "1.0.0",
+  "description": "A music listing website for avid music listeners to utilize. 1. [General Information](#general-info) 3. [Embedded Screenshot](#screenshot) 4. [Technologies List](#technologies) 5. [Installation](#installation) 6. [User Stories](#user-stories) 7. [Wireframes](#wireframes) 8. [Hurdles](#hurdles)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lianneb10/MusicList.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lianneb10/MusicList/issues"
+  },
+  "homepage": "https://github.com/lianneb10/MusicList#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.2"
+  }
+}
