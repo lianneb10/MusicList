@@ -14,7 +14,7 @@ const concertCtrl = require('./controllers/concertCtrl');
 //||---------------||
 //||  MIDDLEWARE   ||
 //||---------------||
-app.use(express.statis('public'))
+app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }));
 
@@ -22,7 +22,18 @@ app.use(express.urlencoded({ extended: true }));
 //||---------------||
 //||    ROUTES     ||
 //||---------------||
-
+//home page route
+app.get('/', (req, res) => {
+    db.Artist.find({}, (err, artists) => {
+        db.Concert.find({}, (err, concerts) => {
+            res.render('home', {
+                artists: artists,
+                concerts: concerts,
+                tabTitle: 'Music List'
+            })
+        })
+    })
+})
 
 app.use('/artist', artistCtrl )
 

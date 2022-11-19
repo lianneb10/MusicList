@@ -1,0 +1,48 @@
+body {
+    color: white;
+    background: rgb(99, 6, 99);
+}
+
+/* Home Page  */
+
+a.titleText {
+    text-align: center;
+}
+
+/* holder for database object styles */
+.objects {
+text-decoration: none;
+}
+
+ul.homeList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    /* padding: 0 0 0 0; */
+    /* max-width: 300px; */
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
+/* .homeList h2 {
+    text-align: center;
+} */
+
+
+/* database object styles */
+.db-object {
+    background: gray;
+    border-radius: 2em;
+    text-align: center;
+    margin: 5px auto;
+    /* padding: 0.2px 0.5px 0.2px 0.5px; */
+    width: 33vw;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* margin: 1px  33vh 5px  0; */
+}
+
+.image {
+    border-radius: 10em;
+}

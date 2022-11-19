@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+<body>
+    <a class="titleText">
+    <h1>Music List</h1>
+    <h3>Artist and Concert tracker for the avid music fan!</h3> </a>
+    <div id="artist" class="flex-container">
+        <!-- Artist List-->
+           <h2> Artists:</h2>
+        <ul class="homeList">
+            <% for (let artist of artists) { %>
+                <a class ="objects">
+                    <li class="db-object">
+                        <p> <% if (artist.image) {%>
+                            <image class= "image" src= <%= artist.image %> width="100" />
+                                <% } else { %>
+                       <image class="artistImage" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p>
+                        Name: <a href="/artist/<%=artist._id%>"><%= artist.name %> </a>
+                        <br />
+                        Genre: <%= artist.genre %>
+                        <br />
+                        Last Edited On: <%= artist.dateLogged %>
+                    </li>
+                </a>
+                <% } %>
+        </ul>
+        </div>
+<div id="concert" class="flex-container"></div>
+    <!-- Concert List-->
+        <ul class="homeList">
+            <h2> Concerts:</h2>
+            <% for (let concert of concerts) { %>
+                <a class ="objects">
+                    <li class="db-object">
+                        <p> <% if (concert.image) {%>
+                            <image class= "image" src= <%= concert.image %> width="100" />
+                                <% } else { %>
+                       <image class="concertImage" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p>
+                        Name: <a href="/concert/<%=concert._id%>"><%= concert.name %> </a>
+                        <br />
+                        Genre: <%= concert.genre %>
+                        <br />
+                        Tour: <%= concert.tourName %>
+                        <br />
+                        Concert Date: <%= concert.dateAttended %>
+                    </li>
+                </a>
+                <% } %>
+        </ul>
+    </div>
+</body>
+</html>
