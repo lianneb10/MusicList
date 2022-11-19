@@ -8,6 +8,8 @@
     <a class="titleText">
     <h1>Music List</h1>
     <h3>Artist and Concert tracker for the avid music fan!</h3> </a>
+    
+    <div class = "holdAll">
     <div id="artist" class="flex-container">
         <!-- Artist List-->
            <h2> Artists:</h2>
@@ -29,10 +31,10 @@
                 <% } %>
         </ul>
         </div>
-<div id="concert" class="flex-container"></div>
+<div id="concert" class="flex-container">
     <!-- Concert List-->
+    <h2> Concerts:</h2>
         <ul class="homeList">
-            <h2> Concerts:</h2>
             <% for (let concert of concerts) { %>
                 <a class ="objects">
                     <li class="db-object">
@@ -51,6 +53,7 @@
                 </a>
                 <% } %>
         </ul>
+    </div>
     </div>
 </body>
 </html>

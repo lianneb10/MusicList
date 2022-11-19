@@ -1,12 +1,30 @@
 body {
     color: white;
-    background: rgb(99, 6, 99);
+    --color-scheme: rgb(92, 127, 175);
+    background: var(--color-scheme);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+
+html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Home Page  */
 
 a.titleText {
     text-align: center;
+}
+
+/* Holder for the artist/concert folders */
+
+.holdAll {
+ display: flex;
+min-height: 0;
 }
 
 /* holder for database object styles */
@@ -18,29 +36,42 @@ ul.homeList {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     list-style: none;
-    /* padding: 0 0 0 0; */
-    /* max-width: 300px; */
-    margin: 0 0 0 0;
+    margin: 0;
     padding: 0;
 }
 
-/* .homeList h2 {
+.flex-container {
+    flex-grow: 1;
+    flex-basis: 0;
     text-align: center;
-} */
+    overflow-y: auto;
+}
 
+.flex-container::-webkit-scrollbar{
+    width: 10px;
+}
+.flex-container::-webkit-scrollbar-track{
+    background:var(--color-scheme)
+}
+
+.flex-container::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 6px;
+    border: 3px solid var(--color-scheme);
+}
 
 /* database object styles */
 .db-object {
     background: gray;
     border-radius: 2em;
     text-align: center;
-    margin: 5px auto;
-    /* padding: 0.2px 0.5px 0.2px 0.5px; */
-    width: 33vw;
+    margin: 5px 5px 5px 5px;
+    width: 40%;
     text-overflow: ellipsis;
     overflow: hidden;
-    /* margin: 1px  33vh 5px  0; */
+    padding: 10px;
 }
 
 .image {
