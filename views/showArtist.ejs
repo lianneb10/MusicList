@@ -22,9 +22,10 @@
             <p> Description: <%= artist.description %>
             </p>
             <!-- Function Buttons-->
-            <form action="/artist/<%= artist._id%>?_method=PUT" method="post">
-            <input type="hidden" name="_method" value="PUT"> Edit Artist
-            </form>
+           
+            <a href ="/artist/edit/<%= artist._id %>"> 
+         <button type = "submit"> Edit Artist </button>
+            </a>
         
             <form action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type ="submit"> Delete Artist</button></form>
 		</div>

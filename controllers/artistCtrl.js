@@ -68,4 +68,21 @@ router.delete('/:id', (req,res) => {
 	})
 })
 
+//edit route
+router.get('/edit/:id', (req,res) => {
+	db.Artist.findById(req.params.id, (err, artist) => {
+		res.render('editArtist', {
+			artist: artist,
+			tabTitle: 'Editing Artist:' + artist._id,
+		})
+	})
+})
+
+// post edit route
+router.post('/edit/:id', (req, res) => {
+	db.Artist.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, artist) => {
+		res.redirect('/artist/' + artist._id)
+	})
+})
+
 module.exports = router;

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+        <div id="flex-container">
+            <form action="/artist/edit/<%= artist._id%>" method="post">
+            <input type="text" name="name" value= "<%= artist.name %>" />
+             <input type="text" name="image" value= "<%= artist.image %>"/>
+              <input type="text" name="genre" value= "<%= artist.genre %>"/>
+               <input type="text" name="dateLogged" value= "<%= artist.dateLogged %>"/>
+               <input type="text" name="description" value= 
+               "<%= artist.description %>" />
+               <a><button type="submit"> Edit Artist </button> </a>
+            </form>
+        </div>
+</body>
+
+</html>
