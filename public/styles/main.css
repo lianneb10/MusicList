@@ -30,6 +30,7 @@ min-height: 0;
 /* holder for database object styles */
 .objects {
 text-decoration: none;
+color: inherit;
 }
 
 ul.homeList {
@@ -76,4 +77,15 @@ ul.homeList {
 
 .image {
     border-radius: 10em;
+}
+
+
+/* artist show page css */
+
+.Show {
+     background: gray;
+    border-radius: 2em;
+    text-align: center;
+    margin: 20px auto 5px;
+    width: 50%;
 }

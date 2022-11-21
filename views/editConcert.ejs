@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+        <div id="flex-container">
+            <form action="/concert/edit/<%= concert._id%>" method="post">
+            <input type="text" name="name" value= "<%= concert.name %>" />
+            <input type="text" name="tourName" value= "<%= concert.tourName %>" />
+             <input type="text" name="image" value= "<%= concert.image %>"/>
+              <input type="text" name="genre" value= "<%= concert.genre %>"/>
+               <input type="text" name="dateAttended" value= "<%= concert.dateAttended %>"/>
+               <input type="text" name="notes" value= 
+               "<%= concert.notes %>" />
+               <a><button type="submit"> Edit Concert </button> </a>
+            </form>
+        </div>
+</body>
+
+</html>

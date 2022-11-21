@@ -40,10 +40,49 @@ router.get('/seed/testconcerts', async (req, res) => {
 	}
 });
 
+//show concert route
+router.get('/:id', (req,res) => {
+	db.Concert.findById(req.params.id, (err, concert) => {
+		if (!concert) {
+			res.sendStatus(404)
+			return
+		}
+		res.render('showConcert', {
+			concert: concert,
+			tabTitle: 'Concert:' + concert.tourName,
+		})
+	})
+})
+
+//home page
 router.post('/', (req, rest) => {
 	db.Concert.create(req.body, (err, concert) => {
 		res.redirect('/concert/' + concert._id);
 	});
 });
+
+//delete route
+router.delete('/:id', (req,res) => {
+	db.Concert.findByIdAndDelete(req.params.id, (err, concert) => {
+		res.redirect('/')
+	})
+})
+
+//edit route
+router.get('/edit/:id', (req,res) => {
+	db.Concert.findById(req.params.id, (err, concert) => {
+		res.render('editConcert', {
+			concert: concert,
+			tabTitle: 'Editing Concert:' + concert._id,
+		})
+	})
+})
+
+// post edit route
+router.post('/edit/:id', (req, res) => {
+	db.Concert.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, concert) => {
+		res.redirect('/concert/' + concert._id)
+	})
+})
 
 module.exports = router;

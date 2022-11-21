@@ -21,11 +21,17 @@
                             <image class= "image" src= <%= artist.image %> width="100" />
                                 <% } else { %>
                        <image class="artistImage" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p>
-                        Name: <a href="/artist/<%=artist._id%>"><%= artist.name %> </a>
+                        Name: <%= artist.name %> 
                         <br />
                         Genre: <%= artist.genre %>
                         <br />
                         Last Edited On: <%= artist.dateLogged %>
+
+                        <a href ="/artist/edit/<%= artist._id %>"> 
+         <button type = "submit"> Edit Artist </button>
+            </a>
+        
+            <form action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type ="submit"> Delete Artist</button></form>
                     </li>
                 </a>
                 <% } %>
@@ -36,7 +42,7 @@
     <h2> Concerts:</h2>
         <ul class="homeList">
             <% for (let concert of concerts) { %>
-                <a class ="objects">
+                <a class ="objects" href="/concert/<%=concert._id %>">
                     <li class="db-object">
                         <p> <% if (concert.image) {%>
                             <image class= "image" src= <%= concert.image %> width="100" />
@@ -49,6 +55,12 @@
                         Tour: <%= concert.tourName %>
                         <br />
                         Concert Date: <%= concert.dateAttended %>
+                        
+                        <a href ="/concert/edit/<%= concert._id %>"> 
+         <button type = "submit"> Edit Concert </button>
+            </a>
+        
+            <form action="/concert/<%= concert._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type ="submit"> Delete Concert</button></form>
                     </li>
                 </a>
                 <% } %>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include ('./partials/head.ejs') %>
+	</head>
+	<body>
+		<div class="Show">
+			 <a href="/"> <button> Back to Home</button></a>
+            <h2>Artist: <%= concert.name %></h2>
+            <h3>Tour Name: <%= concert.tourName %></h3>
+			<p>
+				<% if (concert.image) { %>
+				<image class="image" src= "<%= concert.image %>" width ="300" /> 
+                <% } else { %>
+				<image class= "image" src = "https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="300" />
+				<% } %>
+			</p>
+            <p>
+                Genre: <%= concert.genre %>
+            </p>
+            <p> Concert Date: <%= concert.dateAttended %>
+            </p>
+            <p>Notes: <%= concert.notes %>
+            </p>
+            <!-- Function Buttons-->
+           
+            <a href ="/concert/edit/<%= concert._id %>"> 
+         <button type = "submit"> Edit Concert </button>
+            </a>
+        
+            <form action="/concert/<%= concert._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type ="submit"> Delete Concert</button></form>
+		</div>
+	</body>
+</html>
