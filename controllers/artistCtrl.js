@@ -40,10 +40,32 @@ router.get('/seed/testartists', async (req, res) => {
 					res.send(err.message);
 				}
 })
+//show artist route
+router.get('/:id', (req,res) => {
+	db.Artist.findById(req.params.id, (err, artist) => {
+		if (!artist) {
+			res.sendStatus(404)
+			return
+		}
+		res.render('showArtist', {
+			artist: artist,
+			tabTitle: 'Artist:' + artist.name,
+		})
+	})
+})
 
+//home page
 router.post('/', (req, rest) => {
     db.Artist.create(req.body, (err, artist) => {
         res.redirect('/artist/' + artist._id)
     })
 })
+
+//delete route
+router.delete('/:id', (req,res) => {
+	db.Artist.findByIdAndDelete(req.params.id, (err, artist) => {
+		res.redirect('/')
+	})
+})
+
 module.exports = router;

@@ -9,6 +9,7 @@ const db = require('./models');
 //Access controllers
 const artistCtrl = require('./controllers/artistCtrl');
 const concertCtrl = require('./controllers/concertCtrl');
+const methodOverride = require('method-override');
 
 
 //||---------------||
@@ -16,7 +17,9 @@ const concertCtrl = require('./controllers/concertCtrl');
 //||---------------||
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
+
 
 
 //||---------------||

@@ -15,7 +15,7 @@
            <h2> Artists:</h2>
         <ul class="homeList">
             <% for (let artist of artists) { %>
-                <a class ="objects">
+                <a class ="objects" href="/artist/<%=artist._id %>">
                     <li class="db-object">
                         <p> <% if (artist.image) {%>
                             <image class= "image" src= <%= artist.image %> width="100" />

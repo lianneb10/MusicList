@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include ('./partials/head.ejs') %>
+	</head>
+	<body>
+		<div class="artistShow">
+			 <a href="/"> <button> Back to Home</button></a>
+            <h2>Artist: <%= artist.name %></h2>
+			<p>
+				<% if (artist.image) { %>
+				<image class="image" src= "<%= artist.image %>" width ="300" /> 
+                <% } else { %>
+				<image class= "image" src = "https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="300" />
+				<% } %>
+			</p>
+            <p>
+                Genre: <%= artist.genre %>
+            </p>
+            <p> Last Edited On: <%= artist.dateLogged %>
+            </p>
+            <p> Description: <%= artist.description %>
+            </p>
+            <!-- Function Buttons-->
+            <form action="/artist/<%= artist._id%>?_method=PUT" method="post">
+            <input type="hidden" name="_method" value="PUT"> Edit Artist
+            </form>
+        
+            <form action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type ="submit"> Delete Artist</button></form>
+		</div>
+	</body>
+</html>
