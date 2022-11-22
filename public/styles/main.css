@@ -71,7 +71,7 @@ ul.homeList {
     border-radius: 2em;
     text-align: center;
     margin: 5px 2px 5px 2px;
-    width: 500px;
+    width: 450px;
     height: 130px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -83,7 +83,7 @@ ul.homeList {
 
 /* main page css */
 
-#textBox {
+.textBox {
     display: flex;
     flex-direction: column;
      padding: 5px;
@@ -94,7 +94,7 @@ ul.homeList {
      justify-content: center;
 }
 
-#iconHold{
+.iconHold{
     display: flex;
     flex-direction: row;
     position: absolute;
