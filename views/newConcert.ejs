@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+     <a href="/"> <button> Back to Home</button></a>
+        <div id="flex-container">
+            <form action="/concert/" method="post">
+            <input type="text" name="name" placeholder= "Artist Name" />
+            <input type="text" name="tourName" placeholder= "Tour Name" />
+             <input type="text" name="image" placeholder= "Image URL"/>
+              <input type="text" name="genre" placeholder= "Artist Genre"/>
+               <input type="text" name="dateAttended" placeholder= "Concert Date"/>
+               <input type="text" name="notes" placeholder= 
+               "Notes" />
+               <a><button type="submit"> Add Concert </button> </a>
+            </form>
+        </div>
+</body>
+
+</html>

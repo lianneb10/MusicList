@@ -23,7 +23,7 @@
                         <p> <% if (artist.image) {%>
                             <image class= "image" src= <%= artist.image %> width="100" />
                                 <% } else { %>
-                       <image class="artistImage" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p>
+                       <image class="image" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p>
                         Name: <%= artist.name %> 
                         <br />
                         Genre: <%= artist.genre %>
@@ -43,6 +43,9 @@
 <div id="concert" class="flex-container">
     <!-- Concert List-->
     <h2> Concerts:</h2>
+    <a href ="/concert/new"> 
+         <button type = "submit"> Add A New Concert</button>
+            </a>
         <ul class="homeList">
             <% for (let concert of concerts) { %>
                 <a class ="objects" href="/concert/<%=concert._id %>">
@@ -50,7 +53,7 @@
                         <p> <% if (concert.image) {%>
                             <image class= "image" src= <%= concert.image %> width="100" />
                                 <% } else { %>
-                       <image class="concertImage" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p>
+                       <image class="image" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p>
                         Name: <a href="/concert/<%=concert._id%>"><%= concert.name %> </a>
                         <br />
                         Genre: <%= concert.genre %>

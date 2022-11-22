@@ -3,6 +3,12 @@ const express = require('express');
 const router = express.Router();
 const Concert = require('../models/concert');
 
+router.get('/new', (req, res) => {
+	res.render('newConcert', {
+		tabTitle: 'Add New Concert',
+	});
+});
+
 router.get('/seed/testconcerts', async (req, res) => {
 	const testConcerts = [
 		{
@@ -55,7 +61,7 @@ router.get('/:id', (req,res) => {
 })
 
 //home page
-router.post('/', (req, rest) => {
+router.post('/', (req, res) => {
 	db.Concert.create(req.body, (err, concert) => {
 		res.redirect('/concert/' + concert._id);
 	});
