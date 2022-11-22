@@ -18,12 +18,20 @@
             </a>
         <ul class="homeList">
             <% for (let artist of artists) { %>
-                <a class ="objects" href="/artist/<%=artist._id %>">
+                 <a class ="objects" href="/artist/<%=artist._id %>">
                     <li class="db-object">
+                        <div id = displayImage>
                         <p> <% if (artist.image) {%>
                             <image class= "image" src= <%= artist.image %> width="100" />
                                 <% } else { %>
-                       <image class="image" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p>
+                       <image class="image" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p></div>
+
+                       <div id = textBox>
+                        <div id="iconHold">
+                          <button type = "submit"> <image src="/edit.svg" width="20px" height="30px"></image></button>
+
+                        <form action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type="submit"><image src ="/delete.svg" width="20px" height="30px"></image><br/></form></button></div>
+
                         Name: <%= artist.name %> 
                         <br />
                         Genre: <%= artist.genre %>
@@ -31,10 +39,9 @@
                         Last Edited On: <%= artist.dateLogged %>
 
                         <a href ="/artist/edit/<%= artist._id %>"> 
-         <button type = "submit"> Edit Artist </button>
+       
             </a>
-        
-            <form action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type ="submit"> Delete Artist</button></form>
+            </div>
                     </li>
                 </a>
                 <% } %>
@@ -50,10 +57,12 @@
             <% for (let concert of concerts) { %>
                 <a class ="objects" href="/concert/<%=concert._id %>">
                     <li class="db-object">
+                        <div id="displayImage">
                         <p> <% if (concert.image) {%>
                             <image class= "image" src= <%= concert.image %> width="100" />
                                 <% } else { %>
-                       <image class="image" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p>
+                       <image class="image" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p></div>
+                        <div id="textBox">
                         Name: <a href="/concert/<%=concert._id%>"><%= concert.name %> </a>
                         <br />
                         Genre: <%= concert.genre %>
@@ -67,6 +76,7 @@
             </a>
         
             <form action="/concert/<%= concert._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type ="submit"> Delete Concert</button></form>
+          </div>
                     </li>
                 </a>
                 <% } %>
