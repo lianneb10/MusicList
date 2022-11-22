@@ -54,7 +54,7 @@
         <ul class="homeList">
             <% for (let concert of concerts) { %>
                 <a class ="objects" href="/concert/<%=concert._id %>">
-                    <a class="db-object">
+                    <li class="db-object">
                         <div class="displayImage">
                         <p> <% if (concert.image) {%>
                             <image class= "image" src= <%= concert.image %> width="100" />
@@ -63,7 +63,8 @@
 
                         <div class = textBox>
                         <div class="iconHold">
-                          <button type = "submit"> <image src="/edit.svg" width="20px" height="30px"></image></button>
+                           <form action="/concert/edit/<%= concert._id %>" method ="get">  
+                          <button type = "submit"> <image src="/edit.svg" width="20px" height="30px"></image></button></form>
 
                         <form action="/concert/<%= concert._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type="submit"><image src ="/delete.svg" width="20px" height="30px"></image><br/></form></button></div>
 
@@ -75,8 +76,8 @@
                         <br />
                         Concert Date: <%= concert.dateAttended %>
           </div>
-        </a>
-                </a>
+        </li>
+    </a>
                 <% } %>
         </ul>
     </div>
