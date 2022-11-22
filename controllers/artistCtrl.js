@@ -3,7 +3,11 @@ const express = require('express');
 const router = express.Router();
 const Artist = require('../models/artist');
 
-
+router.get('/new', (req,res) => {
+	res.render('newArtist', {
+		tabTitle: 'Add New Artist',
+	})
+})
 router.get('/seed/testartists', async (req, res) => {
     const testArtist = [
 			{
@@ -40,6 +44,7 @@ router.get('/seed/testartists', async (req, res) => {
 					res.send(err.message);
 				}
 })
+
 //show artist route
 router.get('/:id', (req,res) => {
 	db.Artist.findById(req.params.id, (err, artist) => {
@@ -55,7 +60,7 @@ router.get('/:id', (req,res) => {
 })
 
 //home page
-router.post('/', (req, rest) => {
+router.post('/', (req, res) => {
     db.Artist.create(req.body, (err, artist) => {
         res.redirect('/artist/' + artist._id)
     })

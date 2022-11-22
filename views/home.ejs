@@ -13,6 +13,9 @@
     <div id="artist" class="flex-container">
         <!-- Artist List-->
            <h2> Artists:</h2>
+           <a href ="/artist/new"> 
+         <button type = "submit"> Add A New Artist </button>
+            </a>
         <ul class="homeList">
             <% for (let artist of artists) { %>
                 <a class ="objects" href="/artist/<%=artist._id %>">
@@ -55,7 +58,7 @@
                         Tour: <%= concert.tourName %>
                         <br />
                         Concert Date: <%= concert.dateAttended %>
-                        
+
                         <a href ="/concert/edit/<%= concert._id %>"> 
          <button type = "submit"> Edit Concert </button>
             </a>

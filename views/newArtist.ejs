@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+        <div id="flex-container">
+            <form action="/artist/" method="post">
+            <input type="text" name="name" placeholder= "Artist Name" />
+             <input type="text" name="image" placeholder= "Image URL"/>
+              <input type="text" name="genre" placeholder= "Artist Genre"/>
+               <input type="text" name="dateLogged" placeholder= "Date Logged"/>
+               <input type="text" name="description" placeholder= 
+               "Description" />
+               <a><button type="submit"> Add Artist </button> </a>
+            </form>
+        </div>
+</body>
+
+</html>
