@@ -22,29 +22,27 @@
                     <li class="db-object">
                         <div id = displayImage>
                         <p> <% if (artist.image) {%>
-                            <image class= "image" src= <%= artist.image %> width="100" />
+                            <img class= "image" src= <%= artist.image %> width="100" />
                                 <% } else { %>
-                       <image class="image" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p></div>
+                       <img class="image" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p></div>
 
                        <div class = textBox>
                         <div class="iconHold">
-                          <button type = "submit"> <image src="/edit.svg" width="20px" height="30px"></image></button>
+                            <form action="/artist/edit/<%= artist._id %>" method ="get"> 
+                            <button type = "submit"> <img src="/edit.svg" width="20px" height="30px"></button></form>
 
-                        <form action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type="submit"><image src ="/delete.svg" width="20px" height="30px"></image><br/></form></button></div>
-
+                        <form action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> 
+                            <button type="submit"><img src ="/delete.svg" width="20px" height="30px"><br/></button> </form></div>
+                        
                         Name: <%= artist.name %> 
                         <br />
                         Genre: <%= artist.genre %>
                         <br />
                         Last Edited On: <%= artist.dateLogged %>
-
-                        <a href ="/artist/edit/<%= artist._id %>"> 
-       
-            </a>
-            </div>
+                     </div>
                     </li>
-                </a>
-                <% } %>
+                    </a>
+                    <% } %>
         </ul>
         </div>
 <div id="concert" class="flex-container">
