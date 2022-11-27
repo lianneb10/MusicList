@@ -16,7 +16,7 @@ const concertSchema = new Schema({
 	image: {
 		type: String,
 		default:
-			'https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg',
+			'',
 	},
 	dateAttended: {
 		type: String,

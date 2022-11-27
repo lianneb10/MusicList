@@ -6,18 +6,38 @@
 </head>
 
 <body>
-     <a href="/"> <button> Back to Home</button></a>
+       <div class = "Edit">
+        <a href="/"> <button> Back to Home</button></a>
         <div id="flex-container">
             <form action="/artist/edit/<%= artist._id%>" method="post">
-            <input type="text" name="name" value= "<%= artist.name %>" />
-             <input type="text" name="image" value= "<%= artist.image %>"/>
-              <input type="text" name="genre" value= "<%= artist.genre %>"/>
-               <input type="text" name="dateLogged" value= "<%= artist.dateLogged %>"/>
-               <input type="text" name="description" value= 
-               "<%= artist.description %>" />
+            <p><h2><input style="font-size: inherit;" type="text" placeholder="Artist Name" name="name" value= "<%= artist.name %>" /></h2></p>
+
+            <img class="image" width="300" id="changingImg" src=""> 
+
+            <p> <input type="text" name="image" placeholder="Image URL" id="imageURL" oninput="updatingImg()" value= "<%= artist.image %>"/></p>
+                 <p><input type="text" name="genre" placeholder="Genre" value= "<%= artist.genre %>"/></p>
+               <p><input type="text" name="dateLogged" placeholder="Date Logged" value= "<%= artist.dateLogged %>"/></p>
+               <p><input type="text" name="description" placeholder="Description" value= 
+               "<%= artist.description %>" /></p>
                <a><button type="submit"> Edit Artist </button> </a>
             </form>
         </div>
+    </div>
+    
+    <script>
+        // changing image on edit page dynamically to reflect URL
+
+        function updatingImg () {
+           const newImg= document.querySelector("#imageURL").value
+           if (newImg) {
+             document.querySelector("#changingImg").src=newImg 
+           } else {
+            document.querySelector("#changingImg").src="/noimage.jpeg"
+           }
+        }
+
+        updatingImg()
+    </script>
 </body>
 
 </html>

@@ -6,19 +6,37 @@
 </head>
 
 <body>
-     <a href="/"> <button> Back to Home</button></a>
+      <div class = "Edit">
         <div id="flex-container">
+              <a href="/"> <button> Back to Home</button></a>
             <form action="/concert/edit/<%= concert._id%>" method="post">
-            <input type="text" name="name" value= "<%= concert.name %>" />
-            <input type="text" name="tourName" value= "<%= concert.tourName %>" />
-             <input type="text" name="image" value= "<%= concert.image %>"/>
-              <input type="text" name="genre" value= "<%= concert.genre %>"/>
-               <input type="text" name="dateAttended" value= "<%= concert.dateAttended %>"/>
-               <input type="text" name="notes" value= 
-               "<%= concert.notes %>" />
+            <h2><p><input style="font-size: inherit;" type="text" placeholder="Concert Name" name="name" value= "<%= concert.name %>" /></h2></p>
+            <img class="image" width="300" id="changingImg" src=""> 
+
+           <p><input type="text" name="tourName" value= "<%= concert.tourName %>"  placeholder="Tour Name"/></p> 
+            <p><input type="text" name="image" placeholder="Image URL" id="imageURL" oninput="updatingImg()" value= "<%= concert.image %>"/></p> 
+              <p></p><input type="text" name="genre" placeholder="Genre"value= "<%= concert.genre %>"/>
+              <p><input type="text" name="dateAttended" placeholder="Date Attended: MM/DD/YYYY" value= "<%= concert.dateAttended %>"/></p> 
+              <p><input type="text" name="notes" placeholder="Concert Notes" value= 
+               "<%= concert.notes %>" /></p>
                <a><button type="submit"> Edit Concert </button> </a>
             </form>
         </div>
+        </div>
+        <script>
+        // changing image on edit page dynamically to reflect URL
+
+        function updatingImg () {
+           const newImg= document.querySelector("#imageURL").value
+           if (newImg) {
+             document.querySelector("#changingImg").src=newImg 
+           } else {
+            document.querySelector("#changingImg").src="/noimage.jpeg"
+           }
+        }
+
+        updatingImg()
+    </script>
 </body>
 
 </html>

@@ -15,7 +15,7 @@ const artistSchema = new Schema({
 	image: {
 		type: String,
 		default:
-			'https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg',
+			'',
 	},
     dateLogged: {type: String, required: true, default: Date(), placeholder: "Date Logged"}
 });

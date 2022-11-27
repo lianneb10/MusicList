@@ -18,21 +18,18 @@
             </a>
         <ul class="homeList">
             <% for (let artist of artists) { %>
+                <div class = "landmark">
                  <a class ="objects" href="/artist/<%=artist._id %>">
                     <li class="db-object">
                         <div id = displayImage>
+                            
                         <p> <% if (artist.image) {%>
                             <img class= "image" src= <%= artist.image %> width="100" />
                                 <% } else { %>
-                       <img class="image" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p></div>
+                       <img class="image" src="/noimage.jpeg" width="100"> <% } %> </p></div>
 
                        <div class = textBox>
-                        <div class="iconHold">
-                            <form action="/artist/edit/<%= artist._id %>" method ="get"> 
-                            <button type = "submit"> <img src="/edit.svg" width="20px" height="30px"></button></form>
-
-                        <form action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> 
-                            <button type="submit"><img src ="/delete.svg" width="20px" height="30px"><br/></button> </form></div>
+                    
                         
                         Name: <%= artist.name %> 
                         <br />
@@ -41,10 +38,41 @@
                         Last Edited On: <%= artist.dateLogged %>
                      </div>
                     </li>
-                    </a>
+                    </a>   
+                    <div class="iconHold">
+                            <form action="/artist/edit/<%= artist._id %>" method ="get"> 
+                            <button type = "submit"> <img src="/edit.svg" width="20px" height="30px"></button></form>
+                            
+
+                        
+                        
+
+                            <button id="deleteArtistModal" onclick="this.closest('.landmark').querySelector('.modal').style.display='inherit'"><img src ="/delete.svg" width="20px" height="30px"><br/></button> 
+
+
+
+                        </div>
+
+                    <!-- The Modal -->
+                            <div id="myModal" class="modal">
+                              <!-- Modal content -->
+                                <div class="modal-content">
+                                <span class="close" onclick="this.closest('.landmark').querySelector('.modal').style.display=''">&times;</span>
+                                <p>Are you sure you want to delete <%= artist.name %>?</p>
+                                <div><form style = "display: inline;" action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> 
+                            <button type="submit">Yes</button> </form>
+                        <button onclick="this.closest('.landmark').querySelector('.modal').style.display=''">No</button></div>
+                                </div></div> 
+</div>
                     <% } %>
+
+                    
         </ul>
         </div>
+
+
+
+
 <div id="concert" class="flex-container">
     <!-- Concert List-->
     <h2> Concerts:</h2>
@@ -53,21 +81,17 @@
             </a>
         <ul class="homeList">
             <% for (let concert of concerts) { %>
+                <div class="landmark">
                 <a class ="objects" href="/concert/<%=concert._id %>">
                     <li class="db-object">
                         <div class="displayImage">
                         <p> <% if (concert.image) {%>
-                            <image class= "image" src= <%= concert.image %> width="100" />
+                            <img class= "image" src= <%= concert.image %> width="100" />
                                 <% } else { %>
-                       <image class="image" src="https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="100"> <% } %> </p></div>
+                       <img class="image" src="/noimage.jpeg" width="100"> <% } %> </p></div>
 
                         <div class = textBox>
-                        <div class="iconHold">
-                           <form action="/concert/edit/<%= concert._id %>" method ="get">  
-                          <button type = "submit"> <image src="/edit.svg" width="20px" height="30px"></image></button></form>
-
-                        <form action="/concert/<%= concert._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type="submit"><image src ="/delete.svg" width="20px" height="30px"></image><br/></form></button></div>
-
+                        
                         Name: <%= concert.name %> 
                         <br />
                         Genre: <%= concert.genre %>
@@ -78,6 +102,30 @@
           </div>
         </li>
     </a>
+                     <div class="iconHold">
+                            <form action="/concert/edit/<%= concert._id %>" method ="get"> 
+                            <button type = "submit"> <img src="/edit.svg" width="20px" height="30px"></button></form>
+                            
+
+                        
+                        
+
+                            <button id="deleteConcrtModal" onclick="this.closest('.landmark').querySelector('.modal').style.display='inherit'"><img src ="/delete.svg" width="20px" height="30px"><br/></button> </div>
+
+
+                        <!-- The Modal -->
+                            <div id="myModal" class="modal">
+                              <!-- Modal content -->
+                                <div class="modal-content">
+                                <span class="close" onclick="this.closest('.landmark').querySelector('.modal').style.display=''">&times;</span>
+                                <p>Are you sure you want to delete <%= concert.name %>?</p>
+                                <div><form style = "display: inline;" action="/concert/<%= concert._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> 
+                            <button type="submit">Yes</button> </form>
+                        <button onclick="this.closest('.landmark').querySelector('.modal').style.display=''">No</button></div>
+                                </div></div> 
+                </div>
+
+                
                 <% } %>
         </ul>
     </div>

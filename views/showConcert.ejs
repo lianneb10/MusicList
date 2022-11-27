@@ -10,9 +10,9 @@
             <h3>Tour Name: <%= concert.tourName %></h3>
 			<p>
 				<% if (concert.image) { %>
-				<image class="image" src= "<%= concert.image %>" width ="300" /> 
+				<img class="image" src= "<%= concert.image %>" width ="300" /> 
                 <% } else { %>
-				<image class= "image" src = "https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" width="300" />
+				<img class= "image" src = "/noimage.jpeg" width="300" />
 				<% } %>
 			</p>
             <p>
