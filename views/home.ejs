@@ -43,14 +43,7 @@
                             <form action="/artist/edit/<%= artist._id %>" method ="get"> 
                             <button type = "submit"> <img src="/edit.svg" width="20px" height="30px"></button></form>
                             
-
-                        
-                        
-
                             <button id="deleteArtistModal" onclick="this.closest('.landmark').querySelector('.modal').style.display='inherit'"><img src ="/delete.svg" width="20px" height="30px"><br/></button> 
-
-
-
                         </div>
 
                     <!-- The Modal -->
@@ -60,6 +53,7 @@
                                 <span class="close" onclick="this.closest('.landmark').querySelector('.modal').style.display=''">&times;</span>
                                 <p>Are you sure you want to delete <%= artist.name %>?</p>
                                 <div><form style = "display: inline;" action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> 
+                                    
                             <button type="submit">Yes</button> </form>
                         <button onclick="this.closest('.landmark').querySelector('.modal').style.display=''">No</button></div>
                                 </div></div> 

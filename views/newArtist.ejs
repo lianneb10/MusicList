@@ -6,18 +6,43 @@
 </head>
 
 <body>
+    <div class = "New">
      <a href="/"> <button> Back to Home</button></a>
+
         <div id="flex-container">
             <form action="/artist/" method="post">
-            <input type="text" name="name" placeholder= "Artist Name" />
-             <input type="text" name="image" placeholder= "Image URL"/>
-              <input type="text" name="genre" placeholder= "Artist Genre"/>
-               <input type="text" name="dateLogged" placeholder= "Date Logged"/>
-               <input type="text" name="description" placeholder= 
-               "Description" />
+
+            <p><input type="text" name="name" style="font-size:inherit" placeholder= "Artist Name" /></p>
+
+              <p><img class="image" width="300" id="changingImg" src=""> </p>
+
+             <p><input type="text" name="image" id="imageURL" oninput="updatingImg()" placeholder= "Image URL"/></p>
+
+              <p><input type="text" name="genre" placeholder= "Artist Genre"/></p>
+
+               <p><input type="text" name="dateLogged" placeholder= "Date Logged"/></p>
+
+               <p><input type="text" name="description" placeholder= 
+               "Description" /></p>
+
                <a><button type="submit"> Add Artist </button> </a>
             </form>
         </div>
+        </div>
+        <script>
+        // changing image on edit page dynamically to reflect URL
+
+        function updatingImg () {
+           const newImg= document.querySelector("#imageURL").value
+           if (newImg) {
+             document.querySelector("#changingImg").src=newImg 
+           } else {
+            document.querySelector("#changingImg").src="/noimage.jpeg"
+           }
+        }
+
+        updatingImg()
+    </script>
 </body>
 
 </html>

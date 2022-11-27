@@ -15,15 +15,18 @@
             <img class="image" width="300" id="changingImg" src=""> 
 
             <p> <input type="text" name="image" placeholder="Image URL" id="imageURL" oninput="updatingImg()" value= "<%= artist.image %>"/></p>
+
                  <p><input type="text" name="genre" placeholder="Genre" value= "<%= artist.genre %>"/></p>
+
                <p><input type="text" name="dateLogged" placeholder="Date Logged" value= "<%= artist.dateLogged %>"/></p>
-               <p><input type="text" name="description" placeholder="Description" value= 
-               "<%= artist.description %>" /></p>
+
+               <p><input type="text" name="description" placeholder="Description" value= "<%= artist.description %>" /></p>
+               
                <a><button type="submit"> Edit Artist </button> </a>
             </form>
         </div>
     </div>
-    
+
     <script>
         // changing image on edit page dynamically to reflect URL
 

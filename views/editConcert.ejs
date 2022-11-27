@@ -9,16 +9,22 @@
       <div class = "Edit">
         <div id="flex-container">
               <a href="/"> <button> Back to Home</button></a>
+
             <form action="/concert/edit/<%= concert._id%>" method="post">
             <h2><p><input style="font-size: inherit;" type="text" placeholder="Concert Name" name="name" value= "<%= concert.name %>" /></h2></p>
+
             <img class="image" width="300" id="changingImg" src=""> 
 
            <p><input type="text" name="tourName" value= "<%= concert.tourName %>"  placeholder="Tour Name"/></p> 
+
             <p><input type="text" name="image" placeholder="Image URL" id="imageURL" oninput="updatingImg()" value= "<%= concert.image %>"/></p> 
-              <p></p><input type="text" name="genre" placeholder="Genre"value= "<%= concert.genre %>"/>
-              <p><input type="text" name="dateAttended" placeholder="Date Attended: MM/DD/YYYY" value= "<%= concert.dateAttended %>"/></p> 
-              <p><input type="text" name="notes" placeholder="Concert Notes" value= 
-               "<%= concert.notes %>" /></p>
+
+              <p><input type="text" name="genre" placeholder="Genre"value= "<%= concert.genre %>"/></p>
+
+              <p><input type="text" name="dateAttended" placeholder="Date Attended: MM/DD/YYYY" value= "<%= concert.dateAttended %>"/></p>
+
+              <p><input type="text" name="notes" placeholder="Concert Notes" value= "<%= concert.notes %>" /></p>
+              
                <a><button type="submit"> Edit Concert </button> </a>
             </form>
         </div>

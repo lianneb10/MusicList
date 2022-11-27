@@ -146,7 +146,7 @@ ul.homeList {
     right: 5px;
 }
 
-/* artist show page css */
+/* show page css */
 
 .Show {
      background: gray;
@@ -155,8 +155,18 @@ ul.homeList {
     margin: 20px auto 5px;
     width: 50%;
 }
-
+/* edit page css */
 .Edit {
+     background: gray;
+    border-radius: 2em;
+    text-align: center;
+    margin: 20px auto 5px;
+    width: 50%;
+}
+
+/* new page css */
+
+.New {
      background: gray;
     border-radius: 2em;
     text-align: center;
