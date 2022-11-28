@@ -9,11 +9,12 @@ const db = require('./models');
 //Access controllers
 const artistCtrl = require('./controllers/artistCtrl');
 const concertCtrl = require('./controllers/concertCtrl');
-const PORT = process.env.PORT;
+const port = process.env.PORT;
 const methodOverride = require('method-override');
 
 
 //||---------------||
+
 //||  MIDDLEWARE   ||
 //||---------------||
 app.use(express.static('public'))
