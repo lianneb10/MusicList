@@ -4,7 +4,8 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-//Accss models
+//Access models
+require('dotenv').config()
 const db = require('./models');
 //Access controllers
 const artistCtrl = require('./controllers/artistCtrl');
