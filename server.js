@@ -9,9 +9,8 @@ const db = require('./models');
 //Access controllers
 const artistCtrl = require('./controllers/artistCtrl');
 const concertCtrl = require('./controllers/concertCtrl');
-const port = process.env.PORT;
 const methodOverride = require('method-override');
-
+const port = process.env.PORT;
 
 //||---------------||
 
