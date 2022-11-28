@@ -10,7 +10,6 @@ const db = require('./models');
 const artistCtrl = require('./controllers/artistCtrl');
 const concertCtrl = require('./controllers/concertCtrl');
 const PORT = process.env.PORT;
-const mongodbURI = process.env.MONGODBURI;
 const methodOverride = require('method-override');
 
 
