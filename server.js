@@ -3,13 +3,14 @@
 //||---------------||
 const express = require('express');
 const app = express();
-const port = 3000;
 //Access models
 require('dotenv').config()
 const db = require('./models');
 //Access controllers
 const artistCtrl = require('./controllers/artistCtrl');
 const concertCtrl = require('./controllers/concertCtrl');
+const PORT = process.env.PORT;
+const mongodbURI = process.env.MONGODBURI;
 const methodOverride = require('method-override');
 
 
