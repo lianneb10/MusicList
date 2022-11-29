@@ -16,7 +16,7 @@ router.get('/seed/testconcerts', async (req, res) => {
 			genre: 'K-Pop',
             tourName: 'Be The Sun in Oakland',
 			notes: 'The live dance performances were amazing like the last time I got to see them! Cant wait until the next tour!',
-			image: "/public/noimage.jpeg",
+			image: "/noimage.jpeg",
 			dateAttended: '08/13/2022',
 		},
 		{
@@ -25,7 +25,7 @@ router.get('/seed/testconcerts', async (req, res) => {
             tourName: 'girls like me',
 			notes: 'putting this tour here because I want to see her next time- but I loved this album!!',
 			image:
-				"/public/noimage.jpeg",
+				"/noimage.jpeg",
 			dateAttended: 'N/A',
 		},
 		{
@@ -34,7 +34,7 @@ router.get('/seed/testconcerts', async (req, res) => {
             tourName: '88Rising Festival 2022',
 			notes: 'She performed all of my fave songs!!',
 			image:
-				"/public/noimage.jpeg",
+				"/noimage.jpeg",
 			dateAttended: '09/11/2022',
 		},
 	];
