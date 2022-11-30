@@ -27,7 +27,18 @@
          <button type = "submit"> Edit Artist </button>
             </a>
         
-            <form action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> <button type ="submit"> Delete Artist</button></form>
+
+            <button id="deleteArtistModal" onclick="document.querySelector('.modal').style.display='inherit'"> Delete Artist</button> 
+
+            <!-- The Modal -->
+                            <div id="myModal" class="modal">
+                              <!-- Modal content -->
+                                <div class="modal-content">
+                                <span class="close" onclick="document.querySelector('.modal').style.display=''">&times;</span>
+                                <p>Are you sure you want to delete <%= artist.name %>?</p>
+                                <div><form style = "display: inline;" action="/artist/<%= artist._id %>?_method=DELETE" method ="post"> <input type="hidden" name="_method" value="DELETE"> 
+                                    <button type="submit">Yes</button> </form>
+                        <button onclick="document.querySelector('.modal').style.display=''">No</button></div>
 		</div>
 	</body>
 </html>
