@@ -31,6 +31,7 @@ This website is meant to be a tool for music listeners that wish to track their 
 1. On the homepage of this repository, click "Code" and then download the code.
 2. Once you have downloaded the file, you are then able to open the code with VSCode
 3. In order to preview the site, use LivePreview (a VSCode extension)
+4. To see the live site, please go to https://musiclist-production.up.railway.app/
 
 <h2 id="user-stories">💬 User Stories </h2>
 
