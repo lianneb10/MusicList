@@ -42,6 +42,7 @@ This website is meant to be a tool for music listeners that wish to track their 
 
 
 <h2 id="hurdles">:construction_worker: Hurdles </h2>
+
 * CSS for the columns to display the two modals on my home page 
 * Modal for asking the user if they want to delete a specific artist/concert
 
