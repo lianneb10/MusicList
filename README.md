@@ -24,6 +24,7 @@ This website is meant to be a tool for music listeners that wish to track their 
 * Javascript
 * Express
 * Mongo
+* NodeJS
 
 <h2 id="installation">🔧 Installation </h2>
 
