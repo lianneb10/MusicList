@@ -13,7 +13,6 @@ const methodOverride = require('method-override');
 const port = process.env.PORT;
 
 //||---------------||
-
 //||  MIDDLEWARE   ||
 //||---------------||
 app.use(express.static('public'))
